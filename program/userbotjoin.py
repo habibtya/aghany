@@ -8,7 +8,7 @@ from pyrogram.errors import UserAlreadyParticipant
 
 
 @Client.on_message(
-    command(["userbotjoin","شغيل","انضم","نضم", f"userbotjoin@{BOT_USERNAME}"]) & ~filters.private & ~filters.bot
+    command(["userbotjoin","لمساعد","انضم","نضم", f"userbotjoin@{BOT_USERNAME}"]) & ~filters.private & ~filters.bot
 )
 @authorized_users_only
 @errors
@@ -35,7 +35,7 @@ async def join_group(client, message):
         print(e)
         await message.reply_text(     
             f"🚨برجاء التاكد من عدم حظر الحساب المساعد في المجموعه  🚨 \n\n** او ربما لم يتمكن حساب المساعد من الانضمام إلى مجموعتك بسبب كثرة طلبات الانضمام **"
-            "\n\n**أو تواصل مع المطور @aashekelsafar او أضف مساعدًا يدويًا @Olinyomu  إلى مجموعتك وحاول مرة أخرى**",
+            "\n\n**أو تواصل مع المطور @{OWNER_NAME} او أضف مساعدًا يدويًا @{ASSISTANT_NAME}  إلى مجموعتك وحاول مرة أخرى**",
         )
         return
     await message.reply_text(
@@ -43,7 +43,7 @@ async def join_group(client, message):
     )
 
 
-@Client.on_message(command(["userbotleave","غادر",
+@Client.on_message(command(["userbotleave","غادرة",
                             f"leave@{BOT_USERNAME}"]) & filters.group & ~filters.edited)
 @authorized_users_only
 async def leave_one(client, message):
@@ -58,7 +58,7 @@ async def leave_one(client, message):
         return
 
 
-@Client.on_message(command(["leaveall","غادرالجميع", f"leaveall@{BOT_USERNAME}"]))
+@Client.on_message(command(["leaveall","ادرالجميع", f"leaveall@{BOT_USERNAME}"]))
 @sudo_users_only
 async def leave_all(client, message):
     if message.from_user.id not in SUDO_USERS:
