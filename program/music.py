@@ -312,7 +312,7 @@ async def nftb(client: Client, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("𝆥  ⚡️ ??قناة البوت @{UPDATES_CHANNEL}""","),
+                    InlineKeyboardButton("𝆥  ⚡️ ??قناة البوت @{UPDATES_CHANNEL}"),
                 ],
             ]
         ),
